@@ -96,6 +96,9 @@ pub enum ErrorReason {
     /// The provider token is stale and a new token should be generated.
     ExpiredProviderToken,
 
+    /// The device token has expired.
+    ExpiredToken,
+
     /// The specified action is not allowed.
     Forbidden,
 
@@ -173,6 +176,8 @@ impl fmt::Display for ErrorReason {
                 "The client certificate was for the wrong environment.",
             ErrorReason::ExpiredProviderToken =>
                 "The provider token is stale and a new token should be generated.",
+            ErrorReason::ExpiredToken =>
+                "The device token has expired.",
             ErrorReason::Forbidden =>
                 "The specified action is not allowed.",
             ErrorReason::InvalidProviderToken =>
